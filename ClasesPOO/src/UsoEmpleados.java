@@ -7,7 +7,24 @@ public class UsoEmpleados {
         
         Jefes Antonio=new Jefes("Antonio", 10000, 2000, 12, 10);
 
-        Antonio.getDatosEmpleado();
+
+        Empleados[] misEmpleados=new Empleados[5];
+        
+        misEmpleados[0]=new Empleados("Ana", 30000, 2000, 10, 10);
+        misEmpleados[1]=new Empleados("Juan", 40000, 2001, 5, 15);
+        misEmpleados[2]=new Empleados("María", 35000, 2002, 8, 20);
+        misEmpleados[3]=new Empleados("Pedro", 45000, 2003, 12, 25);
+        misEmpleados[4]=Antonio; //Principio de sustitución
+
+        Jefes Patricia=new Jefes("Patricia", 50000, 1999, 3, 5);  
+        
+        Empleados PatriciaSecretaria=Patricia; //Principio de sustitución
+        //Una clase padre puede contener a un objeto de una clase hija, pero no al revés.
+
+        for (Empleados e: misEmpleados){
+            System.out.println(e.getDatosEmpleado() + " y un salario de: " + e.getSueldo() + " y fecha de alta: " + e.getFechaAlta().getTime());
+        }
+        
         
     }
 
@@ -56,6 +73,12 @@ class Empleados{
         double aumento=sueldo*porcentaje/100;
          sueldo+=aumento;
 
+    }
+
+    //Método para pedir aumento
+    public void pedirAumento(double porcentaje){
+        System.out.println("El empleado " + nombre + " pide un aumento del " + porcentaje + "%.");
+        subirSalario(porcentaje);
     }
  
     //Parámetros

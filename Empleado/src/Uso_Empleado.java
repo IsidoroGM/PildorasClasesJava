@@ -1,5 +1,3 @@
-package Empleado;
-
 import java.util.*;
 public class Uso_Empleado {
 

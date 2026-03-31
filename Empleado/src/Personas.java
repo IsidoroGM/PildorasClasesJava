@@ -1,8 +1,5 @@
 
-import java.util.GregorianCalendar;
-
-
-
+// Clase dedicada al estudio de las clases Abastractas, y la herencia entre clases.
 public abstract class Personas{
 
     
@@ -24,11 +21,11 @@ public abstract class Personas{
     
 class Empleados extends Personas{
 
-    public Empleados(String nom, double sueldo, GregorianCalendar fechaAlta) {
+    public Empleados(String nom, double sueldo) {
         super(nom);
         //TODO Auto-generated constructor stub
 
-        this.fechaAlta=fechaAlta;
+      
         this.sueldo=sueldo;
     }
 
@@ -36,7 +33,7 @@ class Empleados extends Personas{
     public String getDescription() {
         // TODO Auto-generated method stub
         //throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
-        return "El empelado " + this.getNombre() + " tiene un sueldo de " + sueldo + ", y entró a trabajar en " + fechaAlta;
+        return "El empelado " + this.getNombre() + " tiene un sueldo de " + sueldo;
     }
 
     public double getSueldo(){
@@ -45,10 +42,43 @@ class Empleados extends Personas{
 
     private double sueldo;
 
-    private GregorianCalendar fechaAlta;
-
+    
 }
 
+class Jefes extends Empleados{
+
+    public Jefes(String nom, double sueldo, double incentivo) {
+        super(nom, sueldo);
+        //TODO Auto-generated constructor stub
+    }
+
+    public void setIncentivo(double incentivo){
+        this.incentivo=incentivo;
+    }
+
+    private double incentivo;
+}
+
+class alumnos extends Personas{
+
+    public alumnos(String nom, String carrera, String aula) {
+        super(nom);
+        //TODO Auto-generated constructor stub
+        this.carrera=carrera;
+        this.aula=aula;
+    }
+
+    @Override
+    public String getDescription() {
+        // TODO Auto-generated method stub
+        //throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
+        return "El alumno " + this.getNombre() + " estudia " + carrera + " y su aula es " + aula;
+    }
+
+    private String carrera;
+    private String aula;
+
+}
 
 
 

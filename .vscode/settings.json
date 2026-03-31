@@ -2,10 +2,11 @@
     "java.project.sourcePaths": [
         "Pildoras",
         "GPT",
+        "Empleado/src",
+        "Empleado",
         "ClasesPOO/src",
         "ClasesPOO",
-        "Empleado",
-        "Empleado\\src"
+        "gestionEmpresa"
     ],
     "java.project.referencedLibraries": []
 }

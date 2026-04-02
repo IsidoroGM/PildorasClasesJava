@@ -7,10 +7,10 @@ public class EmpleadoComision extends Empleado {
         comisionPorCliente=0;
     }
 
-    public EmpleadoComision(String nombre, String DNI, int agnoAlta, int yearIngreso, int clientesCaptados, double comisionPorCliente){
+    public EmpleadoComision(String nombre, String DNI, int agnoAlta, int clientesCaptados, double montoPorCliente){
         super(nombre, DNI, agnoAlta);
         this.clientesCaptados=clientesCaptados;
-        this.comisionPorCliente=comisionPorCliente;
+        this.comisionPorCliente=montoPorCliente;
 
     }
 
@@ -40,7 +40,7 @@ public class EmpleadoComision extends Empleado {
         this.comisionPorCliente=comisionPorCliente;
     }
 
-    public double getComisionPorCliente(){
+    public double getMontoPorCliente(){
         return comisionPorCliente;
     }
 

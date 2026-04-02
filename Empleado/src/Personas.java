@@ -45,7 +45,9 @@ class Empleados extends Personas{
     
 }
 
-class Jefes extends Empleados{
+// Clase jefes que hereda de clase Empleados, a su vez de la abstracta Personas
+// Se le implementa la interfaz paraJefes
+class Jefes extends Empleados implements paraJefes{
 
     public Jefes(String nom, double sueldo, double incentivo) {
         super(nom, sueldo);
@@ -57,6 +59,20 @@ class Jefes extends Empleados{
     }
 
     private double incentivo;
+
+    //Desarrollamos los métodos de la interfaz.
+    @Override
+    public void setCargo(String cargo) {
+        this.cargo=cargo;
+    }
+
+    @Override
+    public String getCargo() {
+        return "\nAdemás tiene el cargo de: " + cargo;
+    }
+
+    //parámetro de clase de la interfaz.
+    private String cargo;
 }
 
 class alumnos extends Personas{

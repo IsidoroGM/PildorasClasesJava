@@ -9,9 +9,10 @@ public class Uso_personas {
 
 
         Jefes Isidoro=new Jefes("Isidoro",38000, 10000);
+        Isidoro.setCargo("Jefazo");
+        System.out.println(Isidoro.getDescription() + Isidoro.getCargo());
 
-        System.out.println(Isidoro.getNombre());
-        System.out.println(Isidoro.getDescription());
+        
 
         alumnos Olivia=new alumnos("Olivia", "Informática", "Jirafas");
 

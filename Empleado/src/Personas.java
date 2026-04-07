@@ -19,7 +19,7 @@ public abstract class Personas{
 
 }
     
-class Empleados extends Personas{
+class Empleados extends Personas implements Comparable, paraTrabajadores{
 
     public Empleados(String nom, double sueldo) {
         super(nom);
@@ -42,6 +42,22 @@ class Empleados extends Personas{
 
     private double sueldo;
 
+    @Override
+    public int compareTo(Object o) {
+
+        //Hacemos un casting . Transformamos el objeto "o" en un objeto de tipo Empleado. Asi puede comparar empleados.
+
+        Empleados otroEmpleado=(Empleados)o;
+        if(this.sueldo<otroEmpleado.sueldo) return -1;
+        if(this.sueldo>otroEmpleado.sueldo) return 1;
+        return 0;        
+    }
+
+    @Override
+    public double setBonus(double gratificacion) {
+        return paraTrabajadores.bonus + gratificacion;
+    }
+
     
 }
 
@@ -49,7 +65,7 @@ class Empleados extends Personas{
 // Se le implementa la interfaz paraJefes
 class Jefes extends Empleados implements paraJefes{
 
-    public Jefes(String nom, double sueldo, double incentivo) {
+    public Jefes(String nom, int sueldo) {
         super(nom, sueldo);
         //TODO Auto-generated constructor stub
     }
@@ -73,6 +89,12 @@ class Jefes extends Empleados implements paraJefes{
 
     //parámetro de clase de la interfaz.
     private String cargo;
+
+    @Override
+    public double setBonus(double gratificacion) {
+        double prima=2000;
+        return prima+gratificacion+bonus;
+    }
 }
 
 class alumnos extends Personas{

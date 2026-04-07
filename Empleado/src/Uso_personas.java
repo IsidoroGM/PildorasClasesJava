@@ -1,4 +1,7 @@
 
+import java.util.Arrays;
+
+
 public class Uso_personas {
 
     public static void main(String[] args) {
@@ -24,11 +27,18 @@ public class Uso_personas {
         losEmpleados[3]=new Empleados("Paco", 1500);
         losEmpleados[4]=new Empleados("Sandra", 3000);
 
-        //Veremos la información de cada elemento guardado en el array
-
-        //  Creamos un bucle for:each, donde e, se marca como variable de Empelados y usa .getDescription por cada uno.
+        Arrays.sort(losEmpleados);
         for(Empleados e: losEmpleados){
             System.out.println(e.getDescription());
         }
+        //Veremos la información de cada elemento guardado en el array
+
+        Jefes Manuel=new Jefes("Manuel", 5000);
+
+        Empleados Sonia=new Empleados("Sonia", 3000);
+        System.out.println("El trabajador " + Sonia.getNombre() + " tiene un bonus de: " + Sonia.setBonus(500));
+
+        
+        
     }
 }

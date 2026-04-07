@@ -1,7 +1,7 @@
 
 // Creamos una interfaz para la clase jefes
 
-public interface paraJefes {
+public interface paraJefes extends paraTrabajadores{
 
     // Las interfaces solo pueden tener metodos abstractos y constantes.
 

@@ -1,12 +1,13 @@
 {
     "java.project.sourcePaths": [
+        "gestionEmpresa",
         "Pildoras",
         "GPT",
         "Empleado/src",
         "Empleado",
         "ClasesPOO/src",
         "ClasesPOO",
-        "gestionEmpresa"
+        "Temporizador"
     ],
     "java.project.referencedLibraries": []
 }

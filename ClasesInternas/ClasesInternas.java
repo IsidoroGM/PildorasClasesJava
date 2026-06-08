@@ -1,4 +1,5 @@
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -61,6 +62,8 @@ class Reloj{
             Date ahora=new Date();
 
             System.out.println("Te pongo la hora cada 3 segundos" + ahora);
+
+            if (sonido) Toolkit.getDefaultToolkit().beep();
         }
 
         

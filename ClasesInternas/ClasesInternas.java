@@ -23,8 +23,8 @@ public class ClasesInternas {
 
     public static void main(String[] args) {
 
-        Reloj mireloj=new Reloj(3000, true);
-        mireloj.ejecutarTemporizador();
+        Reloj mireloj=new Reloj();
+        mireloj.ejecutarTemporizador(3000, true);
 
         JOptionPane.showMessageDialog(null, "Pulsa aceptar para terminar");
         
@@ -34,27 +34,11 @@ public class ClasesInternas {
 
 class Reloj{
 
-    public Reloj(int intervalo, boolean sonido){
-        this.intervalo=intervalo;
-        this.sonido=sonido;
-    }
+    public void ejecutarTemporizador(int intervalo, boolean sonido){
 
-    public void ejecutarTemporizador(){
-        ActionListener oyente=new DameLaHora();
 
-        Timer miTemporizador= new Timer(intervalo,oyente);
-        miTemporizador.start();
-    }
-
-    //Campo que realiza el conteo temporal.
-    private int intervalo;
-
-    //Campo que recoge el sonido.
-    private boolean sonido;
-
-    //CLASE INTERNA
-    //Solo puede aplicarse el modificador PRIVATE a una clase cuando es clase interna
-    private class DameLaHora implements ActionListener{
+        // Clase interna Local, dentro del método ejectuarTemporizador()
+        class DameLaHora implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -66,9 +50,24 @@ class Reloj{
             if (sonido) Toolkit.getDefaultToolkit().beep();
         }
 
-        
-
     }
+        ActionListener oyente=new DameLaHora();
+
+        Timer miTemporizador= new Timer(intervalo,oyente);
+        miTemporizador.start();
+
+        
+    }
+
+    // //Campo que realiza el conteo temporal.
+    // private int intervalo;
+
+    // //Campo que recoge el sonido.
+    // private boolean sonido;
+
+    //CLASE INTERNA
+    //Solo puede aplicarse el modificador PRIVATE a una clase cuando es clase interna
+    
 }
 
 

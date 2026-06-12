@@ -2,6 +2,7 @@
 //Ejercicio de PildorasInformáticas donde deberemos crear 3 ventanas que aparezcan en lugares concretos de la pantalla.
 
 import javax.swing.JFrame;
+import java.awt.Toolkit;
 
 public class EjercicioVentanas {
 
@@ -25,6 +26,8 @@ public class EjercicioVentanas {
 class MiVentana extends JFrame{
     public MiVentana(String titulo, int WIDTH, int HEIGHT, int LWIDTH, int LHEIGHT){
 
+        Toolkit.getDefaultToolkit().beep();
+        
         setDefaultCloseOperation(3);
         setLocation(LWIDTH, LHEIGHT);
         setTitle(titulo);

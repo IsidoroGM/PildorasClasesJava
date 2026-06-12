@@ -2,6 +2,8 @@
 //Ejercicio de PildorasInformáticas donde deberemos crear 3 ventanas que aparezcan en lugares concretos de la pantalla.
 
 import javax.swing.JFrame;
+
+import java.awt.Image;
 import java.awt.Toolkit;
 
 public class EjercicioVentanas {
@@ -27,13 +29,27 @@ class MiVentana extends JFrame{
     public MiVentana(String titulo, int WIDTH, int HEIGHT, int LWIDTH, int LHEIGHT){
 
         Toolkit.getDefaultToolkit().beep();
-        
+
+        //Vamos a aprender a incorporar una imagen al icono de la ventana
+        Toolkit miSistema=Toolkit.getDefaultToolkit();
+
+        //Variable de tipo Imagen donde almacenaremos la imagen
+        Image miIcono=miSistema.getImage("C:\\Users\\Is y Doro\\Desktop\\CodigoPildorasInformaticas\\PildorasClasesJava\\InterfacesGraficas\\EjercicioVentanas\\imagen\\dadoss.png"); 
+
+        //Establecemos el icono con el metodo SetIconImagen y aportandole la variable miIcono
+        setIconImage(miIcono);
+
+
+
+
         setDefaultCloseOperation(3);
         setLocation(LWIDTH, LHEIGHT);
         setTitle(titulo);
         setSize(WIDTH, HEIGHT);;
         setVisible(true);
     }
+
+
 
     
 }

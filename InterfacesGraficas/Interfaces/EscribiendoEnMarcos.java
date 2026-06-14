@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -39,11 +40,14 @@ class PrimerPanel extends JPanel{
 
         super.paintComponent(g);
 
-        
         setBackground(new Color(39, 245, 242));
 
         Color miLetraColor=new Color(224, 0, 36);
         g.setColor(miLetraColor);
+
+        Font miletra=new Font("Verdana", Font.ITALIC, 30);
+
+        g.setFont(miletra);
         g.drawString("Hola amigos", 20, 20);
         
     }

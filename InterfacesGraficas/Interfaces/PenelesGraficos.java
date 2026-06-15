@@ -10,9 +10,6 @@ public class PenelesGraficos {
         MarcoGraficos miMarco=new MarcoGraficos();
         miMarco.setDefaultCloseOperation(3);
 
-        
-       
-        
     }
 
 }

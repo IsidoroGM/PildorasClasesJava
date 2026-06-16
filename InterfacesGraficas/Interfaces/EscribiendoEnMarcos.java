@@ -1,6 +1,10 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -37,7 +41,17 @@ class MarcoTexto extends JFrame{
                 setBackground(new Color(39, 245, 242));
 
                 super.paintComponent(g);
-                
+
+                //Pintar un rectángulo con Graphics 2D
+                Graphics2D g2=(Graphics2D)g;
+
+                Rectangle2D rectangulo=new Rectangle2D.Double(100,100,400,150);
+
+                BasicStroke milapiz=new BasicStroke(4);
+                g2.setStroke(milapiz);
+                g2.draw(rectangulo);
+                //Triangulo pintado
+
                 // Creamos un color para la letra
                 g.setColor(new Color(224, 0, 36));
 

@@ -61,22 +61,37 @@ class LaminaGraficos extends JPanel {
 
         super.paintComponent(g);
 
+        Graphics2D g2 = (Graphics2D) g;
+
         // Tus dibujos
-        g.drawRect(20, 20, 125, 75);
-        g.drawLine(20, 20, 145, 95);
-        g.fillRect(20, 200, 125, 75);
+        g2.drawRect(20, 20, 125, 75);
+        g2.drawLine(20, 20, 145, 95);
+        g2.fillRect(20, 200, 125, 75);
 
-        // Botón animado
+        // Posición del botón
         int x = 300;
-        int y = botonPulsado ? 155 : 150; // Baja 5 píxeles al pulsar
+        int y = botonPulsado ? 155 : 150;
 
-        g.setColor(Color.LIGHT_GRAY);
-        g.fillRect(x, y, 150, 60);
+        // Gradiente rojo -> azul
+        GradientPaint degradado = new GradientPaint(x, y, Color.RED, x + 150, y + 60, Color.BLUE);
 
-        g.setColor(Color.BLACK);
-        g.drawRect(x, y, 150, 60);
+        g2.setPaint(degradado);
+        g2.fillRoundRect(x, y, 150, 60, 20, 20);
 
-        g.setFont(new Font("Arial", Font.BOLD, 18));
-        g.drawString("PULSAR", x + 35, y + 35);
+        // Borde
+        g2.setColor(Color.BLACK);
+        g2.drawRoundRect(x, y, 150, 60, 20, 20);
+
+        // Texto
+        g2.setColor(Color.WHITE);
+        g2.setFont(new Font("Arial", Font.BOLD, 18));
+
+        FontMetrics fm = g2.getFontMetrics();
+        String texto = "PULSAR";
+
+        int textoX = x + (150 - fm.stringWidth(texto)) / 2;
+        int textoY = y + ((60 - fm.getHeight()) / 2) + fm.getAscent();
+
+        g2.drawString(texto, textoX, textoY);
     }
 }

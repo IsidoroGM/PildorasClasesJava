@@ -8,7 +8,8 @@
         "Empleado",
         "ClasesPOO/src",
         "ClasesPOO",
-        "ClasesInternas"
+        "ClasesInternas",
+        "Eventos"
     ],
     "java.project.referencedLibraries": []
 }

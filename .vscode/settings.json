@@ -11,5 +11,6 @@
         "ClasesInternas",
         "Eventos"
     ],
-    "java.project.referencedLibraries": []
+    "java.project.referencedLibraries": [],
+    "java.debug.settings.onBuildFailureProceed": true
 }

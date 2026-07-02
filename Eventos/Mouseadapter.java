@@ -1,0 +1,6 @@
+/**
+ * Mouseadapter
+ */
+public class Mouseadapter {
+
+}

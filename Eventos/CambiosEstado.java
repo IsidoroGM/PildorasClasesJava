@@ -1,16 +1,16 @@
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowStateListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JFrame;
 
 public class CambiosEstado {
 
     public static void main(String[] args) {
 
+        
         MiMarcoVentana marcoVentana = new MiMarcoVentana();
 
         marcoVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        marcoVentana.addWindowStateListener(new EventoDeVentana());
+        marcoVentana.addMouseListener(new EventoDeRaton());
 
         marcoVentana.setVisible(true);
     }
@@ -25,13 +25,10 @@ class MiMarcoVentana extends JFrame {
     }
 }
 
-class EventoDeVentana implements WindowStateListener {
+class EventoDeRaton extends MouseAdapter {
 
-    @Override
-    public void windowStateChanged(WindowEvent e) {
-
-        System.out.println("La ventana ha cambiado de estado");
-
-        System.out.println(e.getNewState());
+    public void mouseClicked(java.awt.event.MouseEvent e) {
+        System.out.println("Has hecho click en la ventana");
     }
+    
 }

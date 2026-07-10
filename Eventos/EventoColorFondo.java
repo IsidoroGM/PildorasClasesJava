@@ -1,0 +1,6 @@
+/**
+ * EventoColorFondo
+ */
+public class EventoColorFondo {
+
+}

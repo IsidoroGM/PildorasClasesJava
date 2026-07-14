@@ -4,12 +4,13 @@
         "Temporizador",
         "Pildoras",
         "GPT",
+        "Eventos",
         "Empleado/src",
         "Empleado",
         "ClasesPOO/src",
         "ClasesPOO",
         "ClasesInternas",
-        "Eventos"
+        "Layouts"
     ],
     "java.project.referencedLibraries": [],
     "java.debug.settings.onBuildFailureProceed": true

@@ -1,4 +1,5 @@
 
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,29 +24,38 @@ class MarcoConLayout extends JFrame{
         setTitle("Disposiciones");
         setBounds(600, 350, 600, 300);
 
-        PanelConLayout lamina=new PanelConLayout();
-        add(lamina);
+        PanelConLayoutInferior laminaInferior=new PanelConLayoutInferior();
+        PanelConLayoutSuperior laminaSuperior=new PanelConLayoutSuperior();
+        add(laminaInferior, BorderLayout.SOUTH);
+        add(laminaSuperior, BorderLayout.NORTH);
 
 
     }
 }
 
-class PanelConLayout extends JPanel{
+// Panel para la zona superior
+class PanelConLayoutSuperior extends JPanel{
 
-    public PanelConLayout(){
+    public PanelConLayoutSuperior(){
 
-        //setLayout(new java.awt.FlowLayout(FlowLayout.CENTER, 50, 100));
+        setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        setLayout(new BorderLayout());
-        
-        
         add(new JButton("Amarillo"));
         add(new JButton("Rojo"));
-        add(new JButton("Azul"));
-        add(new JButton("Verde"));
-        add(new JButton("Morado"));
-
-        
         
     }
 }
+
+//Panel para la zona inferior
+class PanelConLayoutInferior extends JPanel{
+
+    public PanelConLayoutInferior(){
+
+        setLayout(new BorderLayout());
+        add(new JButton("Azul"), BorderLayout.CENTER);
+        add(new JButton("Verde"), BorderLayout.EAST);
+        add(new JButton("Morado"), BorderLayout.WEST);
+
+    }
+}
+
